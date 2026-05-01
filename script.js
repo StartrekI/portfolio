@@ -91,7 +91,7 @@ window.addEventListener('scroll', highlightNavLink);
 
 // ===== Typing Effect =====
 const typingText = document.querySelector('.typing-text');
-const roles = ['Software Development Engineer', 'Codeforces Expert', 'IIT Guwahati CSE', 'ML Enthusiast'];
+const roles = ['Software Development Engineer', 'Backend Engineer', 'AI Pipeline Builder', 'Codeforces Expert', 'IIT Guwahati CSE', 'ML Enthusiast'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
