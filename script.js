@@ -9,32 +9,7 @@ const projectCards = document.querySelectorAll('.project-card');
 const contactForm = document.getElementById('contactForm');
 const statNumbers = document.querySelectorAll('.stat-number');
 
-// ===== Cursor Glow Effect =====
-let mouseX = 0;
-let mouseY = 0;
-let currentX = 0;
-let currentY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorGlow.style.opacity = '1';
-});
-
-document.addEventListener('mouseleave', () => {
-    cursorGlow.style.opacity = '0';
-});
-
-function animateCursor() {
-    currentX += (mouseX - currentX) * 0.1;
-    currentY += (mouseY - currentY) * 0.1;
-    
-    cursorGlow.style.left = currentX + 'px';
-    cursorGlow.style.top = currentY + 'px';
-    
-    requestAnimationFrame(animateCursor);
-}
-animateCursor();
+// ===== Cursor Glow Effect (removed) =====
 
 // ===== Navbar Scroll Effect =====
 let lastScroll = 0;
@@ -248,39 +223,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Parallax Effect for Orbs =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const orbs = document.querySelectorAll('.gradient-orb');
-    
-    orbs.forEach((orb, index) => {
-        const speed = 0.1 + (index * 0.05);
-        orb.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
+// ===== Parallax orbs (removed) =====
 
-// ===== Tilt Effect for Cards =====
-const tiltCards = document.querySelectorAll('.project-card, .skill-category');
-
-tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-});
+// ===== Tilt effect (removed in favor of subtle background hover) =====
 
 // ===== Page Load Animation =====
 window.addEventListener('load', () => {
